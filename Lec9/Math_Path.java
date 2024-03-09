@@ -1,6 +1,6 @@
 package Lec9;
 
-public class Math_Path {
+public class Maze_Path {
     public static void main(String[] args) {
         int m=3;
         int n=3;
