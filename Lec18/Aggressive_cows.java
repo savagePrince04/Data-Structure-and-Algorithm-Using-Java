@@ -23,15 +23,21 @@ public class Aggressive_cows {
     }
 
     public static int largest_mini_dis(int[] stall, int c) {
-        int lo = 0;
-        int hi = stall[stall.length - 1] - stall[0];
+        //  search space
+        int lo = 0; 
+        int hi = stall[stall.length - 1] - stall[0]; // stall.length-1
         int ans = 0;
         while (lo <= hi) {
+            // here mid represent minimum possible distance between two cow
             int mid = (lo + hi) / 2;
+             // is it is possible to place all the cows atleast mid distance apart
             if (isitpossible(stall, c, mid) == true) {
                 ans = mid;
+                // if it is possible then i want to increace the distance further
                 lo = mid + 1;
             } else {
+                 // if it is not possible to place all the cows atleast mid distance
+                // then i need to decreace the mid distance
                 hi = mid - 1;
             }
 
